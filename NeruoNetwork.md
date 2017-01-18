@@ -1,0 +1,5 @@
+# NeuralNetWork
+
+## Kernel Confusing Concepts:
+### 
+
