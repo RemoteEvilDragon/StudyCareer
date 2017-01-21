@@ -135,6 +135,28 @@ combined-space coefficients of tumors in multispectral brain MRIs.
 A Bayesian classification framework is designed based on combined space Gabor decomposition.
 
 
+###  TAYLOR, JOHN, BUENDIA AND RYAN (2013): MAP-REDUCE ENABLED HIDDEN MARKOV MODELS FOR HIGH THROUGHPUT
+MULTIMODAL BRAIN TUMOR SEGMENTATION
+We have developed a novel Map-Reduce enabled extension to hidden markov models to enable **high-throughput** training and segmentation of tumors
+and edema in multimodal magnetic resonance images of the brain.
+1.preprocessing part
+2.Training the HMM,involves extracting a feature vector for each voxel in the source case.With map reducer produce new featur vector.
+3.A final controller normalizes the probabilities in the HMM(initial ,transition,emission)and stores the HMM to a file.
+Segmentation and Results:
+
+
+### TUSTISON, WINTERMARK, DURST AND AVANTS (2013): ANTS AND ÁRBOLES
+They are professional,use their own framework,has got very detailed steps to implement their method,and their methods cost a bulk of time to get
+the results.
+
+
+
+
+### ZIKIC, GLOCKER, KONUKOGLU, SHOTTON, CRIMINISI, YE, DEMIRALP, THOMAS, DAS, JENA, AND PRICE (2012):
+CONTEXT-SENSITIVE CLASSIFICATION FORESTS FOR SEGMENTATION OF BRAIN TUMOR TISSUES
+This submission is based on a classsification forest,which is used such as to produce context-sensitivve predictions.
+
+
 
 
 
