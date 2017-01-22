@@ -4,21 +4,19 @@
 CLASSIFICATION AND REGULARIZATION
 
 It's based on classification with integrated hierachical regularization.
-Healthy tissues into CSF,WM,GM.
-Pathologic tissues into necrotic,active,non-enhancing and edema compartment.
+Healthy tissues into CSF,WM,GM.Pathologic tissues into necrotic,active,non-enhancing and edema compartment.
 
 Decision forest has the advantage of being able to handle multi-class problems and providing a probablistitc output.
+
 1.The pre-processing phase(denoising,bias-field correction,rescaling,histogram matching),
 
-2.decision  forest classifier
+2.decision forest classifier
 
 3.Segmentation of brain tumor images based on integrated hierachical classification and regularization.
 
 4.Model an energy minmization problem in a conditional random field formulation.
 
-take attention here,we also compared the proposed approach to our previous method which used svms as a classifier instead of decision forests and which 
-
-had a less sophiscated regularization.
+take attention here,we also compared the proposed approach to our previous method which used svms as a classifier instead of decision forests and which had a less sophiscated regularization.
 
 It porints out that,they had come with some generalizaiton problems here.
 
@@ -42,15 +40,18 @@ A database of multi-channel local patches is first built from a set of training 
 similar multi-channel patches are retrieved in the patch database,along with the corresponding labels. Finally, a classification 
 map for the test case is inferred as a combination of the retrieved labels during a label fusion step.
 
+And there are quite some shortcomings of this method.
+
+
 
 ### DOYLE, VASSEUR, DOJAT AND FORBES (2013): FULLY AUTOMATIC BRAIN TUMOR SEGMENTATION FROM MULTIPLE
 MR SEQUENCES USING HIDDEN MARKOV FIELDS AND VARIATIONAL EM
 
+EM:**Expectation Maximization** framework.
+
 This approach is fully automatic and requires no training,The model parameters are instead estimated using 
 a variational EM algorithm with MRF constraints and the inclusion of a priori probabilistic maps to provide
 a stable parameter trajectory during optimization.
-
-Potts model.
 
 
 ### FESTA, PEREIRA, MARIZ, SOUSA AND SILVA (2013): AUTOMATIC BRAIN TUMOR SEGMENTATION OF MULTI-SEQUENCE MR IMAGES USING RANDOM
@@ -61,11 +62,16 @@ preprocessing phase
 2.The second normalizes the intensity scale of each sequence to a chosen reference by histogram matching using ITK.
 3.all sequence from each subject were cropped to have the same brain volume.
 
+Main method:Random decision forest,which is used based on several features extracted from the training data.
+1)MR sequences intensities and the difference between each two sequences
+2)neighborhood information with the mean, sum, median and intensity range of 3D cubic neighborhoods
+3)context information as the difference between each voxel and the mean value of 3   3   3 mm cubes
+4)texture information in all MR sequences, including edge density and local binary partition
 
 
 ### GEREMIA, MENZE AND AYACHE (2012): SPATIAL DECISION FORESTS FOR GLIOMA SEGMENTATION IN MULTI-CHANNEL
 MR IMAGES
-They present the "Spatially Adaptive Random Forests" to overcome these isssues in the context of volumetric medical images.
+They present the **Spatially Adaptive Random Forests** to overcome these isssues in the context of volumetric medical images.
 SARF buidls on three cutting-edge methods:
 1.discriminative random forests
 2.an efficient multi-scale 3D image representation
@@ -75,16 +81,18 @@ SARF buidls on three cutting-edge methods:
 ### GUO, SCHWARTZ AND ZHAO (2013): SEMI-AUTOMATIC SEGMENTATION OF MULTIMODAL BRAIN TUMOR USING
 ACTIVE CONTOURS
 this is a semi-automatic segmentation method for multimodal brain tumors,it's highly anchored on manuling part.
-
+The user should draw a ROI roughly surrounding the tumor on a single image.
+And then based on the edge-based active con-tours techiniques.
 
 
 ### HAMAMCI AND UNAL (2012): MULTIMODAL BRAIN TUMOR SEGMENTATION USING THE “TUMOR-CUT” METHOD
-This is a semi-automatic approach
-This seems to be a not so good approach,there are some shortages inside.
+Main method:**Tumor-Cut**
+It's an semi-automatic tumor segmentation method.
 
 
 ### MEIER, BAUER, SLOTBOOM, WIEST AND REYES (2013): APPEARANCE- AND CONTEXT-SENSITIVE FEATURES FOR BRAIN
 TUMOR SEGMENTATION
+Main method
 Very important 3 parts:
 1.a feature extraction yielding a voxel-wise feature vector
 2.a classification step and a subsequent spatial regularization
@@ -146,11 +154,15 @@ Segmentation and Results:
 
 
 ### TUSTISON, WINTERMARK, DURST AND AVANTS (2013): ANTS AND ÁRBOLES
-They are professional,use their own framework,has got very detailed steps to implement their method,and their methods cost a bulk of time to get
-the results.
+Main method:Regression forest
 
+They are professional,use their own framework,has got very detailed steps to implement their method,and their methods cost a bulk of time to get the results.
 
+### ZHAO AND CORSO (2012): BRAIN TUMOR SEGMENTATION WITH MRF ON SUPERVOXELS
+Main method: MRF on supervoxels
 
+### ZHAO, SARIKAYA AND CORSO (2013): AUTOMATIC BRAIN TUMOR SEGMENTATION WITH MRF ON SUPERVOXELS
+Main method: MRF on supervoxels
 
 ### ZIKIC, GLOCKER, KONUKOGLU, SHOTTON, CRIMINISI, YE, DEMIRALP, THOMAS, DAS, JENA, AND PRICE (2012):
 CONTEXT-SENSITIVE CLASSIFICATION FORESTS FOR SEGMENTATION OF BRAIN TUMOR TISSUES
